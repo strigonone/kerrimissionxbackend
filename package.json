@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/strigonone/kerrimissionxbackend/issues"
   },
-  "homepage": "https://github.com/strigonone/kerrimissionxbackend#readme"
+  "homepage": "https://github.com/strigonone/kerrimissionxbackend#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql2": "^2.2.5"
+  }
 }
