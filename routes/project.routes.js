@@ -1,20 +1,25 @@
-const { Router } = require('express');
-const { get, getOne, update } = require('../controllers/project.controller');
+const { Router } = require("express");
+const {
+  get,
+  getOne,
+  getTwo,
+  getThree,
+  update,
+} = require("../controllers/project.controller");
 
-// const express = require('express');
-// const router = express.Router();
-const router = Router(); // Express router instance
+const router = Router();
 
 // GET /api/project + /
-router.get('/', get);
-
-// GET /api/project + /specialProject
-router.get('/specialProject', get);
+router.get("/getAllData", get);
 
 // PATCH /api/project + /
-router.patch('/', update);
+router.patch("/", update);
 
 // GET /api/project/ + :id/
-router.get('/:id', getOne);
+router.get("/getbeginnerdata", getOne);
+
+router.get("/getintermediatedata", getTwo);
+
+router.get("/getadvanceddata", getThree);
 
 module.exports = router;
