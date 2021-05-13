@@ -1,11 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 // const bodyParser = require('body-parser');
-const routesHandler = require("./routes/handler.js");
+// const routesHandler = require("./routes/handler.js");
 
 // get the MySQL client
 const mysql = require("mysql2");
-const { parse } = require("dotenv/types");
+// const { parse } = require("dotenv/types");
 
 //Initiate an application by calling the express() method
 const app = express();
@@ -21,7 +21,7 @@ app.get("/test", (req, res) => {
 // Backend routing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use("/", routesHandler);
+// app.use("/", routesHandler);
 
 // Set the port for the server to run on current environment (Heroku host) or port 4000
 var PORT = process.env.PORT || 4000;
@@ -31,14 +31,24 @@ app.listen(PORT, () => {
 
 // Database connection at backend with MySQL below:
 
-// create the connection to mysql database through scalegrid.io dbm
+var fs = require("fs");
 const connection = mysql.createConnection({
   host: "SG-MissionX-4265-mysql-master.servers.mongodirector.com",
   database: "MissionXLibrary",
   user: "sgroot",
   password: "RKyjrf^MIB2sfR5z",
+  port: 3306,
+  // ssl:{ca:fs.readFileSync('<ca-cert filename>') https://scalegrid.io/blog/configuring-and-managing-ssl-on-your-mysql-server/
+  ssl: {
+    ca: fs.readFileSync("<getSSLCertificate.pem"),
+    rejectUnauthorized: true,
+  },
 });
 
+connection.connect(function (err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
 // Query practice with Sebin
 // connection.query(
 //   'SELECT * FROM `table` WHERE `Variable` = "Value" AND `Variable` = Value2',
