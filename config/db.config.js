@@ -1,4 +1,4 @@
-const dbconfig = {
+const config = {
 	host: "SG-MissionX-4265-mysql-master.servers.mongodirector.com",
 	database: "MissionXLibrary",
 	user: "sgroot",
@@ -13,4 +13,4 @@ const dbconfig = {
 	},
 };
 
-module.exports = { dbconfig };
+module.exports = { config };
