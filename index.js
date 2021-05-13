@@ -40,7 +40,7 @@ const connection = mysql.createConnection({
   port: 3306,
   // ssl:{ca:fs.readFileSync('<ca-cert filename>') https://scalegrid.io/blog/configuring-and-managing-ssl-on-your-mysql-server/
   ssl: {
-    ca: fs.readFileSync("<getSSLCertificate.pem"),
+    ca: fs.readFileSync("./SSL/SSLCertificate.pem"),
     rejectUnauthorized: true,
   },
 });
