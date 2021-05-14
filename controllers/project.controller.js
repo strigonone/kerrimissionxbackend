@@ -14,7 +14,9 @@ const get = async (req, res) => {
       console.log("Status_No Content. HTTP status code: 204");
     } else {
       res.status(200).json(jsonResult);
-      console.log("Success!");
+      console.log(
+        "Success! Thank you to our Friendly Neighbourhood SpiderMan!!"
+      );
     }
   } else {
     console.error("Error: Missing parameter");
